@@ -16,7 +16,7 @@ function LoginPage() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/auth/login",
+        "https://chillzflix.onrender.com/api/auth/login",
         { username: username, password: password }
       );
       localStorage.setItem("token", response.data.token); // Store token in local storage

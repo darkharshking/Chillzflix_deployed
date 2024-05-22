@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
@@ -8,31 +8,19 @@ import {
   Route,
   Routes,
   Navigate,
-  useNavigate,
 } from "react-router-dom";
 import MoviesList from "./components/MoviesList";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
-import { AuthProvider } from "./AuthContext"; // Import the AuthProvider and useAuth
+import { AuthProvider, useAuth } from "./AuthContext"; // Import the AuthProvider and useAuth
 import Movie from "./pages/movieDetail/movie";
 import Header from "./components/Header";
 
 // Define HomeRoute component
 const HomeRoute = () => {
-  const [isToken, setIsToken] = useState(false);
-  const navigate = useNavigate();
-  
-  const token = localStorage.getItem("token");
-  
-  useEffect(() => {
-    if (token) {
-      setIsToken(true);
-    } else {
-      navigate('/login');
-    }
-  }, [navigate, token]);
-
-  return isToken ? <App /> : <Navigate to="/login" replace />;
+  const { isLoggedIn } = useAuth();
+  const token =localStorage.getItem('token')
+  return  isLoggedIn || token ? <App /> : <Navigate to="/login" replace />;
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

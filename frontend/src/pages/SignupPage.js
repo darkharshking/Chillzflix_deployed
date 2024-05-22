@@ -27,7 +27,7 @@ function SignupPage() {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/auth/signup",
+        "https://chillzflix.onrender.com/api/auth/signup",
         { username, email, password }
       );
       if (response.status === 201) {
