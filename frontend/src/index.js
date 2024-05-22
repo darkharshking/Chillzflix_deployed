@@ -19,29 +19,20 @@ import Header from "./components/Header";
 
 // Define HomeRoute component
 const HomeRoute = () => {
-  const { isLoggedIn } = useAuth();
-  const [istoken, setIstoken] = useState("false");
+  const [isToken, setIsToken] = useState(false);
   const navigate = useNavigate();
-  console.log(isLoggedIn);
-
+  
   const token = localStorage.getItem("token");
+  
   useEffect(() => {
-    if(token){
-      setIstoken(true);
-    }else{
+    if (token) {
+      setIsToken(true);
+    } else {
       navigate('/login');
     }
-  }, [token])
-  
-  // if (isLoggedIn) {
-  //   if (token != null) {
-  //     setIstoken(true);
-  //   } else {
-  //     navigate("/login");
-  //   }
-  // }
+  }, [navigate, token]);
 
-  return istoken ? <App /> : <Navigate to="/login" replace />;
+  return isToken ? <App /> : <Navigate to="/login" replace />;
 };
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

@@ -124,6 +124,7 @@ const Movie = () => {
               {company.logo_path && (
                 <span className="productionCompanyImage">
                   <img
+                  alt="movie_profuction company"
                     className="movie__productionComapany"
                     src={
                       "https://image.tmdb.org/t/p/original" + company.logo_path
