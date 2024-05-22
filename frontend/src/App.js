@@ -27,10 +27,10 @@ const Home = () => {
             setEnglishMovies(english);
             setNonEnglishMovies(nonEnglish);
 
-            console.log("English Movies:", english);
-            console.log("Non-English Movies:", nonEnglish);
+            console.log("English Movies:", english,englishMovies);
+            console.log("Non-English Movies:", nonEnglish,nonEnglish);
         }
-    }, [popularMovies]);
+    }, []);
 
     return (
         <>

@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react"
 import "./movieList.css"
 import { useParams } from "react-router-dom"
 import Cards from "./Cards"
-import Header from "./Header"
 
 const MovieList = () => {
     
