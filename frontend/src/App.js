@@ -8,8 +8,6 @@ import Header from "./components/Header";
 
 const Home = () => {
     const [popularMovies, setPopularMovies] = useState([]);
-    const [englishMovies, setEnglishMovies] = useState([]);
-    const [nonEnglishMovies, setNonEnglishMovies] = useState([]);
 
     useEffect(() => {
         const fetchMovies = async () => {
@@ -20,17 +18,6 @@ const Home = () => {
         fetchMovies();
     }, []);
 
-    useEffect(() => {
-        if (popularMovies) {
-            const english = popularMovies.filter(movie => movie.original_language === 'en');
-            const nonEnglish = popularMovies.filter(movie => movie.original_language !== 'en');
-            setEnglishMovies(english);
-            setNonEnglishMovies(nonEnglish);
-
-            console.log("English Movies:", english,englishMovies);
-            console.log("Non-English Movies:", nonEnglish,nonEnglish);
-        }
-    }, []);
 
     return (
         <>

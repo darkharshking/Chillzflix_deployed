@@ -10,7 +10,7 @@ const Movie = () => {
   useEffect(() => {
     getData();
     window.scrollTo(0, 0);
-  }, []);
+  });
 
   const getData = () => {
     fetch(
@@ -26,6 +26,7 @@ const Movie = () => {
     <div className="movie">
       <div className="movie__intro">
         <img
+        alt="image_backdrop"
           className="movie__backdrop"
           src={`https://image.tmdb.org/t/p/original${
             currentMovieDetail ? currentMovieDetail.backdrop_path : ""
@@ -36,6 +37,7 @@ const Movie = () => {
         <div className="movie__detailLeft">
           <div className="movie__posterBox">
             <img
+            alt="movie_poster"
               className="movie__poster"
               src={`https://image.tmdb.org/t/p/original${
                 currentMovieDetail ? currentMovieDetail.poster_path : ""
@@ -91,7 +93,6 @@ const Movie = () => {
         {currentMovieDetail && currentMovieDetail.homepage && (
           <a
             href={currentMovieDetail.homepage}
-            target="_blank"
             style={{ textDecoration: "none" }}
           >
             <p>
@@ -104,7 +105,6 @@ const Movie = () => {
         {currentMovieDetail && currentMovieDetail.imdb_id && (
           <a
             href={"https://www.imdb.com/title/" + currentMovieDetail.imdb_id}
-            target="_blank"
             style={{ textDecoration: "none" }}
           >
             <p>
