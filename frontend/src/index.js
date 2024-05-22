@@ -13,7 +13,7 @@ import {
 import MoviesList from "./components/MoviesList";
 import LoginPage from "./pages/LoginPage";
 import SignupPage from "./pages/SignupPage";
-import { AuthProvider, useAuth } from "./AuthContext"; // Import the AuthProvider and useAuth
+import { AuthProvider } from "./AuthContext"; // Import the AuthProvider and useAuth
 import Movie from "./pages/movieDetail/movie";
 import Header from "./components/Header";
 
