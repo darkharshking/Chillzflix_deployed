@@ -1,0 +1,86 @@
+.header {
+    margin: 0 2.5rem;
+    padding: .5rem 0;
+    align-items: center;
+    display: flex;
+    justify-content:space-between;
+}
+
+.headerLeft, .headerRight {
+    display: flex;
+    align-items: center;
+
+}
+
+a > span{
+    margin: 0 30px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    color: white;
+}
+
+a > span:hover {
+    color: red;
+}
+
+.header__icon {
+    width: 100px;
+    cursor: pointer;
+}
+
+.user__avatar {
+    font-size: 2rem;
+}
+
+
+.profile-text-container {
+    position: relative;
+  }
+  
+  .dropdown {
+    display: inline-block;
+  }
+  
+  .profile-text {
+    cursor: pointer;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    margin: 15px 0 15px 60px;
+    background-color: #fff; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 4px; 
+    padding: 8px 0; 
+    top: 100%;
+    right: 0px;
+    z-index: 1;
+  }
+  
+  .dropdown-content span {
+    display: block;
+    padding: 8px 16px; 
+    cursor: pointer;
+    color: #333; /* Text color */
+    text-decoration: none;
+    transition: background-color 0.3s ease; 
+  }
+  
+  /* Dropdown content span hover */
+  .dropdown-content span:hover {
+    background-color: #5b5b5b2e; 
+  }
+  
+  /* Show the dropdown content on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Caret down icon */
+  .fa-caret-down {
+    margin-left: 5px; /* Adjust margin as needed */
+    vertical-align: middle; /* Align icon vertically */
+    color: #888; /* Icon color */
+  }
+  
